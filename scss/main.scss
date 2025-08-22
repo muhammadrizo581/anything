@@ -1,0 +1,80 @@
+@import "global";
+@import "header";
+
+.user {
+  margin-top: 100px;
+  padding: 100px 0;
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  &-card {
+    border-radius: 40px;
+    border: 1px solid black;
+    overflow: hidden;
+
+    &__image {
+      overflow: hidden;
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 100%;
+        transition: .3s;
+      }
+    }
+
+    &__body {
+      padding: 12px;
+
+      h3 {
+        color: blue;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 18px;
+      }
+
+      strong {
+        width: 100%;
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-card {
+      &__body {
+        strong {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-card {
+      &__body {
+        strong {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@import "footer";
